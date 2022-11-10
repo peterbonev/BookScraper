@@ -5,18 +5,19 @@ from genre_frame import BookScraperApplicationGenresFrame
 from genre_primary_list import BookScraperApplicationGenresPriamryList
 
 
-class BookScraperApplicationGenreFrameConstructorMixin(BookScraperApplicationGenresFrame,
-                                 BookScraperApplicationGenresPriamryList,
-                                 BookScraperApplicationGenresEntryList,
-                                 BookScraperApplicationGenresAddButtons,
-                                BookScraperApplicationGenresDelButtons):
-
+class BookScraperApplicationGenreFrameConstructorMixin(
+    BookScraperApplicationGenresFrame,
+    BookScraperApplicationGenresPriamryList,
+    BookScraperApplicationGenresEntryList,
+    BookScraperApplicationGenresAddButtons,
+    BookScraperApplicationGenresDelButtons,
+):
     def construct(self, frame):
         """
-            Main method of mixin constructor class of Genres Dialog(as builder of genres GUI dialog,
-            from following products: frame, entry list with all genres, dynamically taken from site,
-            input list of the chosen genres, controll buttons to add single genre or all genres and delete buttons =
-            for single and all genres
+        Main method of mixin constructor class of Genres Dialog(as builder of genres GUI dialog,
+        from following products: frame, entry list with all genres, dynamically taken from site,
+        input list of the chosen genres, controll buttons to add single genre or all genres and delete buttons =
+        for single and all genres
 
         """
         self._top = self._frame(frame)

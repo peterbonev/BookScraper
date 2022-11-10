@@ -39,25 +39,24 @@ class BooksScraper(Items):
             self.fill_searched_items()
             for word in book_title:
                 self.filter('title', word)
-            self.print_items()
-            return
+            return self.print_container()
+
         if keywords:
             self.fill_searched_items()
             for word in keywords:
                 self.filter('description', word)
-            self.print_items()
-            return
+            return self.print_container()
+
         if sorting:
             self.fill_searched_items()
             self.sort_data(sorting, sort_type != 'ascending')
-            self.print_items()
+            return self.print_container()
 
         if file_info:
             self.fill_searched_items()
             selection = self.searched_items
             ReadJson().check_title_json_file(selection, file_info)
-            return
+            return self.print_container()
         else:
             self.fill_searched_items()
-            self.print_items()
-            return
+            return self.print_container()

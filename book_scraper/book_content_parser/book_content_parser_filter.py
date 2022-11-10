@@ -15,18 +15,18 @@ class BookDataParserFilter(object):
         number_limit = 0
 
         for i in range(0, len(value), 2):
-            if value[i] == 'rating':
+            if value[i] == "rating":
                 number_limit = 6
             else:
                 number_limit = MAX_VALUE
 
             if value[i] in VALIDATION_ARG_RANGE:
                 sign, number = value[i + 1][0], int(value[i + 1][1:])
-                if sign == '>':
+                if sign == ">":
                     min_limit, max_limit = number - 1, number_limit
-                elif sign == '<':
+                elif sign == "<":
                     min_limit, max_limit = 0, number + 1
-                elif sign == '=':
+                elif sign == "=":
                     min_limit, max_limit = number - 1, number + 1
                 if min_limit < book[value[i]] < max_limit:
                     return True
@@ -35,4 +35,3 @@ class BookDataParserFilter(object):
             else:
                 break
         return False
-

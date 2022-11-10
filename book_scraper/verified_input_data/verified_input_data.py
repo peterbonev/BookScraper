@@ -1,12 +1,20 @@
-
-
 class VerifiedInputData(object):
     """
-        Interface class, stores and transfers verified data from CLI to the BookLinksParser
+    Interface class, stores and transfers verified data from CLI to the BookLinksParser
     """
 
-    def __init__(self, books=None, genres=None, filter=None, keywords=None, book_title=None,sort=None, sort_type=None,
-                 file_info=None, X=None):
+    def __init__(
+        self,
+        books=None,
+        genres=None,
+        filter=None,
+        keywords=None,
+        book_title=None,
+        sort=None,
+        sort_type=None,
+        file_info=None,
+        X=None,
+    ):
         self.books = books
         self.genres = genres
         self.filter = filter
@@ -18,5 +26,13 @@ class VerifiedInputData(object):
         self.run_gui = X
 
     def __str__(self):
-        return '{}, {}, {}, {}, {}, {}, {}, {}'.format(self.books, self.genres, self.filter, self.keywords,\
-                                                       self.book_title, self.sort, self.sort_type, self.run_gui)
+        return "{}, {}, {}, {}, {}, {}, {}, {}".format(
+            self.books,
+            self.genres,
+            self.filter,
+            self.keywords,
+            self.book_title,
+            self.sort,
+            self.sort_type,
+            self.run_gui,
+        )

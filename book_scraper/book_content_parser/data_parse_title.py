@@ -1,8 +1,9 @@
-from book_scraper.book_content_parser.book_content_parser_defines import BOOK_TITLE_CLASS_NAME
+from book_scraper.book_content_parser.book_content_parser_defines import (
+    BOOK_TITLE_CLASS_NAME,
+)
 
 
 class DataParseTitle(object):
-
     def __init__(self):
         pass
 

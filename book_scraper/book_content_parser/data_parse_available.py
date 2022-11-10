@@ -5,10 +5,10 @@ from book_content_parser_defines import BOOK_NUM_AVAILABILITY
 
 class DataParseAvailable(object):
     """
-            Scrape book's on-stock availability(number of book available)
-            :param html_raw: Beautiful Soup 4 object (bsObj type)
-            :return: Num of the book, data type: int
-            """
+    Scrape book's on-stock availability(number of book available)
+    :param html_raw: Beautiful Soup 4 object (bsObj type)
+    :return: Num of the book, data type: int
+    """
 
     def __init__(self):
         self.__available = None

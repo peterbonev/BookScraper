@@ -1,12 +1,15 @@
 import grequests
 import requests
 
-from book_scraper.request_parser.request_parser_defines import DEFAULT_SERVER_TIMEOUT, HEADER_GET
+from book_scraper.request_parser.request_parser_defines import (
+    DEFAULT_SERVER_TIMEOUT,
+    HEADER_GET,
+)
 
 
 class RequestsParser(object):
     """
-        Request-response parser class. Pass payload, if Server response = 200OK
+    Request-response parser class. Pass payload, if Server response = 200OK
     """
 
     def __init__(self, url):
@@ -21,10 +24,12 @@ class RequestsParser(object):
         :return: parsed HTML data from GET Request response payload
         """
         try:
-            response = requests.get(page_url, headers=HEADER_GET, timeout=DEFAULT_SERVER_TIMEOUT)
+            response = requests.get(
+                page_url, headers=HEADER_GET, timeout=DEFAULT_SERVER_TIMEOUT
+            )
             response.raise_for_status()
         except:
-            raise ValueError('Invalid URL')
+            raise ValueError("Invalid URL")
         response.close()
         return response
 
@@ -39,7 +44,7 @@ class RequestsParser(object):
         try:
             map_url = grequests.map(server_response, size=10, exception_handler=True)
         except:
-            raise ValueError('Invalid URL')
+            raise ValueError("Invalid URL")
 
         return [url.content for url in map_url if url]
 
@@ -62,6 +67,5 @@ class RequestsParser(object):
         elif isinstance(item, list):
             return self.__request_server_async(item)
 
-
     def __str__(self):
-        return ', '.join(self._response_data)
+        return ", ".join(self._response_data)

@@ -1,7 +1,4 @@
-
-
 class DataParseRating(object):
-
     def __init__(self):
         pass
 
@@ -12,15 +9,25 @@ class DataParseRating(object):
         :return: Rating of the book, data type: int
         """
         rating = 0
-        if html_raw.find('div', class_='col-sm-6 product_main').find("p", class_="star-rating One"):
+        if html_raw.find("div", class_="col-sm-6 product_main").find(
+            "p", class_="star-rating One"
+        ):
             rating = 1
-        elif html_raw.find('div', class_='col-sm-6 product_main').find("p", class_="star-rating Two"):
+        elif html_raw.find("div", class_="col-sm-6 product_main").find(
+            "p", class_="star-rating Two"
+        ):
             rating = 2
-        elif html_raw.find('div', class_='col-sm-6 product_main').find("p", class_="star-rating Three"):
+        elif html_raw.find("div", class_="col-sm-6 product_main").find(
+            "p", class_="star-rating Three"
+        ):
             rating = 3
-        elif html_raw.find('div', class_='col-sm-6 product_main').find("p", class_="star-rating Four"):
+        elif html_raw.find("div", class_="col-sm-6 product_main").find(
+            "p", class_="star-rating Four"
+        ):
             rating = 4
-        elif html_raw.find('div', class_='col-sm-6 product_main').find("p", class_="star-rating Five"):
+        elif html_raw.find("div", class_="col-sm-6 product_main").find(
+            "p", class_="star-rating Five"
+        ):
             rating = 5
 
         return rating

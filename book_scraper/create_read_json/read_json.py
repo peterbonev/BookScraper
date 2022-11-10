@@ -1,16 +1,17 @@
 import json
 from defines_json import JSON_FILE
 
-class ReadJson():
+
+class ReadJson:
     key_search = "title"
 
-    def check_title_json_file(self, titles, dir= JSON_FILE):
+    def check_title_json_file(self, titles, dir=JSON_FILE):
         """
-            Read Json file and search for given title in it
-            param: title,
-            param: dir(optional).
+        Read Json file and search for given title in it
+        param: title,
+        param: dir(optional).
         """
-        with open(dir, 'r') as file_handler:
+        with open(dir, "r") as file_handler:
             json_file = json.load(file_handler)
 
         for item in json_file.values():

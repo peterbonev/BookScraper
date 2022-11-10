@@ -1,9 +1,10 @@
-from book_scraper.book_content_parser.book_content_parser_defines import BOOK_PRODUCT_DESCRIPTION_ID_NAME, \
-    NO_DESCRIPTION
+from book_scraper.book_content_parser.book_content_parser_defines import (
+    BOOK_PRODUCT_DESCRIPTION_ID_NAME,
+    NO_DESCRIPTION,
+)
 
 
 class DataParseDescription(object):
-
     def __init__(self):
         self.__selection = None
 

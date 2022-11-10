@@ -1,9 +1,7 @@
-
-
 class Links(object):
     """
-        Interface class, that maintans transfer of the data between BookLinksParser and BookContentParser.
-        Stores data(links to resources) as dictionary and could be used as key(ganres categories), values(links to them)
+    Interface class, that maintans transfer of the data between BookLinksParser and BookContentParser.
+    Stores data(links to resources) as dictionary and could be used as key(ganres categories), values(links to them)
     """
 
     def __init__(self):

@@ -1,7 +1,4 @@
-
-
 class DataParseGenre(object):
-
     def __init__(self):
         pass
 
@@ -12,4 +9,9 @@ class DataParseGenre(object):
         :return: Genre of the book, data type: unicode
         """
 
-        return html_raw.find("li").findNext(class_='active').findPrevious('a', href=True).getText()
+        return (
+            html_raw.find("li")
+            .findNext(class_="active")
+            .findPrevious("a", href=True)
+            .getText()
+        )
